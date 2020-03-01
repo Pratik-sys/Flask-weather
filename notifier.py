@@ -10,7 +10,7 @@ def weather(city):
 
     api_url = "http://api.openweathermap.org/data/2.5/weather?"
 
-    complete_url = api_url + "appid=" + api_key + "&q=" + city
+    complete_url = api_url + "appid=" + api_key + "&q=" + city + "&units=metric"
 
     response = requests.get(complete_url)
 
@@ -39,11 +39,12 @@ def weather(city):
         weather_description = data[0]["description"]
 
         print(
-            f"Temprature(in Kelvin) = {current_temprature} \n Humidity(in %) = {current_Humidity} \n Atmosphric_pressure = {current_pressure} \n Description = {weather_description}"
+            f" Temprature = {current_temprature}℃ \n Humidity = {current_Humidity} % \n Atmosphric_pressure = {current_pressure} hPa \n Description = {weather_description}"
         )
 
     else:
         print("City not found please refer Map")
 
 
-weather(input("Enter the city name:"))
+# weather(input("Enter the city name:"))
+weather("nagpur")
