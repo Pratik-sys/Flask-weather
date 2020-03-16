@@ -1,6 +1,6 @@
 from flask import Flask, url_for, render_template, request
 from dotenv import load_dotenv
-import os
+import os, json
 import requests
 
 load_dotenv()
@@ -20,6 +20,8 @@ def weather():
         + api_key
         + "&units=metric"
     )
+
+    retrieve = response.json()
 
 
 if __name__ == "__main__":
