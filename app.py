@@ -22,6 +22,8 @@ def weather():
     )
 
     retrieve = response.json()
+    with open("city.json", "w") as json_file:
+        json.dump(retrieve, json_file)
 
 
 if __name__ == "__main__":
