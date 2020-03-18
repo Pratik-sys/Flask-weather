@@ -25,6 +25,15 @@ def weather():
     with open("city.json", "w") as json_file:
         json.dump(retrieve, json_file)
 
+    data = {
+        "city": retrieve["name"],
+        "temprature": str(retrieve["main"]["temp"]),
+        "humidity": str(retrieve["main"]["humidity"]),
+        "pressure": str(retrieve["main"]["pressure"]),
+        "description": str(retrieve["weather"][0]["description"]),
+        "icon": retrieve["weather"][0]["icon"],
+    }
+    print(data)
 
 if __name__ == "__main__":
     app.run(debug=True)
