@@ -1,7 +1,7 @@
+<!DOCTYPE html>
+<html>
 
-  <!DOCTYPE html>
-  <html>
-    <head>
+<head>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -18,8 +18,52 @@
 
 </head>
 
+<body>
+
     <body>
 
+        <section>
+            <nav>
+                <div class="navbar-wrapper">
+                    <a href="#" class="brand-logo">What's the weather like!!</a>
+                </div>
+            </nav>
+            <div class="container">
+                <div class="row">
+                    <div class="col pull s12">
+                        <form method="POST" class="col s12 push-m2 ">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">search</i>
+                                    <input name="city" placeholder="Search" id="first_name" type="text" class="validate"
+                                        align="middle">
+                                </div>
+                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col push-m2 s12 m7">
+                            <div class="card">
+                                {% if data.temprature and data.humidity and data.pressure and data.description and data.icon and data.city%}
+                                <div class="card-content black-text">
+                                    <h3>City: {{data.city}}</h3>
+                                    <img src="http://openweathermap.org/img/w/{{ data.icon }}.png" alt="Image">
+
+                                    <h5>temprature : {{data.temprature}} ℃</h5>
+                                    <h5>humidity : {{data.humidity}}%</h5>
+                                    <h5>pressure : {{data.pressure}}hPa </h5>
+                                    <h5>description : {{data.description}}</h5>
+
+                                </div>
+                                {% endif %}
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
 
     </body>
-  </html>
+
+</html>
