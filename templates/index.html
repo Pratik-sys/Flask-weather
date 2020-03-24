@@ -5,8 +5,6 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
-
-
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
@@ -22,68 +20,68 @@
 
 <body>
 
-    <body>
-
-        <section>
-            <nav>
-                <div class="navbar-wrapper">
-                    <a href="#" class="brand-logo">What's the weather like!!</a>
-                </div>
-            </nav>
-            <div class="container">
-                <div class="row">
-                    <div class="col pull s12">
-                        <form method="POST" class="col s12 push-m2 ">
-                            <div class="row">
-                                <div class="input-field col s6">
-                                    <i class="material-icons prefix">search</i>
-                                    <input name="city" placeholder="Search" id="first_name" type="text" class="validate"
-                                        align="middle">
-                                </div>
-                            </div>
-                    </div>
-                    <div class="row">
-                        <div class="col push-m2 s12 m7">
-                            <div class="card">
-                                {% if data.temprature and data.humidity and data.pressure and data.description and data.icon and data.city%}
-                                <div class="card-content black-text">
-                                    <h3>City: {{data.city}}</h3>
-                                    <img src="http://openweathermap.org/img/w/{{ data.icon }}.png" alt="Image">
-
-                                    <h5>temprature : {{data.temprature}} ℃</h5>
-                                    <h5>humidity : {{data.humidity}}%</h5>
-                                    <h5>pressure : {{data.pressure}}hPa </h5>
-                                    <h5>description : {{data.description}}</h5>
-
-                                </div>
-                                {% endif %}
-
+    <section>
+        <nav>
+            <div class="navbar-wrapper">
+                <a href="#" class="brand-logo">What's the weather like!!</a>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col pull s12">
+                    <form method="POST" class="col s12 push-m2 ">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">search</i>
+                                <input name="city" placeholder="Search" id="first_name" type="text" class="validate"
+                                    align="middle">
                             </div>
                         </div>
-                    </div>
-
                 </div>
-            </div>
-        </section>
-        <!-- start of footer -->
-        <footer class="page-footer">
-            <div class="container">
                 <div class="row">
-                    <div class="col l6 s12">
-                        <h5 class="white-text"> TEXT area</h5>
-                        <p class="grey-text text-lighten-4">text area
-                            <a class="blue-text text-lighten-4 " href="#">link</a>
-                        </p>
+                    <div class="col push-m2 s12 m7">
+                        <div class="card">
+                            {% if data.temprature and data.humidity and data.pressure and data.description and data.icon and data.city%}
+                            <div class="card-content black-text">
+                                <h3>City: {{data.city}}</h3>
+                                <img src="http://openweathermap.org/img/w/{{ data.icon }}.png" alt="Image">
+
+                                <h5>temprature : {{data.temprature}} ℃</h5>
+                                <h5>humidity : {{data.humidity}}%</h5>
+                                <h5>pressure : {{data.pressure}}hPa </h5>
+                                <h5>description : {{data.description}}</h5>
+
+                            </div>
+                            {% endif %}
+
+                        </div>
                     </div>
                 </div>
+
             </div>
-            <div class="footer-copyright">
-                <div class="container">
-                    © 2020 by Pratik pithore Copyright Text
+        </div>
+    </section>
+
+    <!-- start of footer -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text"> Open source Weather forecast</h5>
+                    <p class="grey-text text-lighten-4">For code visit
+                        <a class="blue-text text-lighten-4 "
+                            href="https://github.com/Pratik-sys/weather-Notifier">Github</a>
+                    </p>
                 </div>
             </div>
-        </footer>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2020 by Pratik pithore Copyright Text
+            </div>
+        </div>
+    </footer>
 
-    </body>
+</body>
 
 </html>
