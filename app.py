@@ -1,9 +1,10 @@
-from flask import Flask,request, url_for
+import requests
+from flask import Flask, url_for, render_template, request
 from dotenv import load_dotenv
 import os, json
-import requests
 
 load_dotenv()
+
 app = Flask(__name__)
 
 
@@ -24,7 +25,6 @@ def weather():
     retrieve = response.json()
     with open("city.json", "w") as json_file:
         json.dump(retrieve, json_file)
-
     data = {
         "city": retrieve["name"],
         "temprature": str(retrieve["main"]["temp"]),
@@ -33,7 +33,8 @@ def weather():
         "description": str(retrieve["weather"][0]["description"]),
         "icon": retrieve["weather"][0]["icon"],
     }
-    print(data)
+    return render_template("index.html", data=data)
+
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=8080)
