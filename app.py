@@ -16,9 +16,11 @@ def weather():
         city = "nagpur"
     api_key = os.getenv("PROJECT_API_KEY")
     response = requests.get(
-        "http://api.openweathermap.org/data/2.5/weather?q="
-        + city
+        "http://api.openweathermap.org/data/2.5/weather?"
+        + "appid="
         + api_key
+        + "&q="
+        + city
         + "&units=metric"
     )
 
