@@ -13,4 +13,4 @@ $ python3 app.py
 
 ### Output  
 
-<a href="https://imgur.com/GLqylR3"><img src="https://i.imgur.com/GLqylR3.png" title="source: imgur.com" /></a>
+<a href="https://imgur.com/SD76h4r"><img src="https://i.imgur.com/SD76h4r.png" title="source: imgur.com" /></a>
