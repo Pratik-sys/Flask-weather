@@ -11,11 +11,6 @@ With the help of python Framework [Flask](https://www.fullstackpython.com/flask.
 $ python3 app.py
 ```
 
-## view the deployment
-
-
-https://flask-weather-forecast.herokuapp.com/
-
 ### Output  
 
 <a href="https://imgur.com/SD76h4r"><img src="https://i.imgur.com/SD76h4r.png" title="source: imgur.com" /></a>
