@@ -1,6 +1,8 @@
 import requests, os, json
-from flask import Flask, url_for, render_template, request
+from flask import Flask, render_template, request
+from dotenv import load_dotenv
 
+load_dotenv(".env")
 app = Flask(__name__)
 
 
@@ -8,9 +10,9 @@ app = Flask(__name__)
 def weather():
     if request.method == "POST":
         city = request.form["city"]
-    else:
+    else: 
         city = "nagpur"
-    api_key = os.environ.get("KEY")
+    api_key = os.getenv("KEY")
     response = requests.get('http://api.openweathermap.org/data/2.5/weather?q='+city+'&appid='+api_key+'&units=metric')
 
     retrieve = response.json()
@@ -28,4 +30,4 @@ def weather():
 
 
 if __name__ == "__main__":
-    app.run(debug=False, port=8080)
+    app.run(debug=True)
